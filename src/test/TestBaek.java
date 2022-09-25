@@ -12,6 +12,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Scanner;
 import java.util.StringTokenizer;
+import java.util.TreeMap;
 import java.io.IOException;
 import java.io.InputStream;
  
@@ -28,31 +29,9 @@ public class TestBaek {
 	}
 	public static void main(String[] args) throws IOException {
 
-		Queue<Shark> queue = new PriorityQueue<TestBaek.Shark>(new Comparator<Shark>() {
-			@Override
-			public int compare(Shark o1, Shark o2) {
-				if(o1.y - o2.y < 0) {
-					return -1;
-				}
-				else if(o1.y - o2.y > 0) {
-					return 1;
-				}
-				else {
-					return o1.x - o2.x < 0 ? -1 : 1;
-				}
-			}
-		});
+		TreeMap<Integer, Integer> store = new TreeMap<Integer, Integer>();
 		
-		queue.offer(new Shark(5, 10));
-		queue.offer(new Shark(3, 10));
-		queue.offer(new Shark(10, 10));
-		queue.offer(new Shark(2, 10));
-		queue.offer(new Shark(7, 10));
-		queue.offer(new Shark(1, 10));
-		
-		for(Shark sh : queue) {
-			System.out.println(sh.x + " : " + sh.y);
-		}
+			
 	}
  
 

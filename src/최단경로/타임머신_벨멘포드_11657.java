@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
 public class 타임머신_벨멘포드_11657 {
 	
 	static StringBuilder sb = new StringBuilder();
-	static long[] dp;
+	static long[] distance;
 	static ArrayList<Edge> graph ;
 	static int N, M;
 	static final int INF = Integer.MAX_VALUE;
@@ -41,10 +41,10 @@ public class 타임머신_벨멘포드_11657 {
 		M = Integer.parseInt(st.nextToken());
 		
 		// 선언
-		dp = new long[N+1];
+		distance = new long[N+1];
 		graph = new ArrayList<Edge>(); 
 		
-		Arrays.fill(dp, INF);
+		Arrays.fill(distance, INF);
 		
 		// 연결
 		for(int i = 0; i < M; i++) {
@@ -59,13 +59,14 @@ public class 타임머신_벨멘포드_11657 {
 	
 		if(bellmanFord(1)) {
 			for(int i = 2; i <= N; i++) {
-				if(dp[i] == INF) sb.append(-1).append("\n");
-				else sb.append(dp[i]).append("\n");
+				if(distance[i] == INF) sb.append(-1).append("\n");
+				else sb.append(distance[i]).append("\n");
 			}
 		}
 		else {
 			sb.append(-1).append("\n");
 		}
+		
 		
 		System.out.println(sb);
 		
@@ -73,34 +74,33 @@ public class 타임머신_벨멘포드_11657 {
 	
 	static boolean bellmanFord(int start) {
 		
-		dp[start] = 0;
+		distance[start] = 0;
 		
+		// 모든 노드 V번 검사
 		for(int i = 1; i <= N; i++) {
 			
+			// 모든 간선 검사
 			for(int j = 0; j < M; j++ ) {
 				int curr = graph.get(j).node_1;
 				int next = graph.get(j).node_2;
 				int cost = graph.get(j).cost;
 				
 				// 동떨어진 노드?
-				if(dp[curr] == INF) continue;
+				if(distance[curr] == INF) continue;
 				
-				if(dp[next] > (dp[curr] + cost)) {
+				if(distance[next] > (distance[curr] + cost)) {
 					
-					// 음수 사이클
-					if(i == N) return true;
+					// 음수 사이클 --> 이렇게 하면 시간초과 위험 있음
+					if(i == N) return false;
 
-					dp[next] = dp[curr] + cost;
+					distance[next] = distance[curr] + cost;
 				}
 			}
 		}
 		
 		
-		return false;
+		return true;
 	}
 	
 }
-
-
-
 

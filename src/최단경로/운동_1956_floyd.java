@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 
-public class 운동_1956 {
+public class 운동_1956_floyd {
 	
 
 	static int V, E;
@@ -78,3 +78,4 @@ public class 운동_1956 {
 	
 }
 // 다른 방법으로는 서로에게 가는 경로가 있다면, 사이클이 존재한다는 뜻.
+
