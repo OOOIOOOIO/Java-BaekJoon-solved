@@ -29,6 +29,8 @@ public class RGB거리 {
 				DP[N][Blue] = Math.min(Paint_cost(N - 1, Red), Paint_cost(N - 1, Green)) + Cost[N][Blue];
 			}
 			
+
+			
 		}
 		
 		return DP[N][color];
