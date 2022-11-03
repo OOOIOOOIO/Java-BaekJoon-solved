@@ -8,8 +8,9 @@ import java.util.*;
 public class TestBaek {
 	
     public static void main(String[] args) throws IOException {
-    	String str = "123456";
     	
-
+    	for(int i = 2; i > 0; i--) {
+    		System.out.println(i);
+    	}
     }
 }
