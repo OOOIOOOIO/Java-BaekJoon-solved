@@ -73,7 +73,7 @@ public class 미세먼지안녕_17144 {
 	                    continue;
 	                }
 
-	                temp[y][x] += map[y][x];
+	                temp[y][x] += map[y][x]; // 현재 자리 값 우선 저장
 
 	                for (int i = 0; i < 4; i++) {
 	                    int ny = y + dy[i];
@@ -82,8 +82,8 @@ public class 미세먼지안녕_17144 {
 	                    if (ny < 0 || ny >= R || nx < 0 || nx >= C) continue;
 	                    if (map[ny][nx] == -1) continue;
 
-	                    temp[ny][nx] += (map[y][x] / 5);
-	                    temp[y][x] -= (map[y][x] / 5);
+	                    temp[ny][nx] += (map[y][x] / 5); // 확산
+	                    temp[y][x] -= (map[y][x] / 5); // 현재 자리 확산 횟수 만큼 빼기
 	                }
 	            }
 	        }
@@ -95,19 +95,19 @@ public class 미세먼지안녕_17144 {
 	        // 위쪽 공기청정기는 반시계방향
 	        int top = aircleaner.get(0);
 
-	        for (int x = top - 1; x > 0; x--) {
+	        for (int x = top - 1; x > 0; x--) { // ↓
 	            map[x][0] = map[x-1][0];
 	        }
 	        
-	        for (int y = 0; y < C - 1; y++) {
+	        for (int y = 0; y < C - 1; y++) { // ←
 	            map[0][y] = map[0][y+1];
 	        }
 
-	        for (int x = 0; x < top; x++) {
+	        for (int x = 0; x < top; x++) { // ↑
 	            map[x][C-1] = map[x+1][C-1];
 	        }
 	        
-	        for (int y = C - 1; y > 1; y--) {
+	        for (int y = C - 1; y > 1; y--) { // →
 	            map[top][y] = map[top][y-1];
 	        }
 
@@ -117,19 +117,19 @@ public class 미세먼지안녕_17144 {
 	        // 아래쪽 공기청정기는 시계 방향
 	        int bottom = aircleaner.get(1);
 	        
-	        for (int x = bottom + 1; x < R - 1; x++) {
+	        for (int x = bottom + 1; x < R - 1; x++) { // ↑
 	            map[x][0] = map[x+1][0];
 	        }
 
-	        for (int y = 0; y < C - 1; y++) {
+	        for (int y = 0; y < C - 1; y++) { // ←
 	            map[R-1][y] = map[R-1][y+1];
 	        }
 
-	        for (int x = R - 1; x > bottom; x--) {
+	        for (int x = R - 1; x > bottom; x--) { // ↓
 	            map[x][C-1] = map[x-1][C-1];
 	        }
 
-	        for (int y = C - 1; y > 1; y--) {
+	        for (int y = C - 1; y > 1; y--) { // →
 	            map[bottom][y] = map[bottom][y-1];
 	        }
 
@@ -137,7 +137,7 @@ public class 미세먼지안녕_17144 {
 	    }
 
 	    static int calculateSum() {
-	        int sum = 2;
+	        int sum = 0;
 
 	        for (int x = 0; x < R; x++) {
 	            for (int y = 0; y < C; y++) {
@@ -145,6 +145,6 @@ public class 미세먼지안녕_17144 {
 	            }
 	        }
 	        
-	        return sum;
+	        return sum -2;
 	    }
 	}
