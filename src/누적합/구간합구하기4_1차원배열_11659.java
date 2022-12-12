@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class 구간합구하기4_11659 {
+public class 구간합구하기4_1차원배열_11659 {
 	
 	static int N, M;
 	static int[] arr;
