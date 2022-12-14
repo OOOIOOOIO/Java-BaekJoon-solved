@@ -50,9 +50,6 @@ public class N과M_1_15649 {
 				visited[i] = false;
 			}
 		}
-		
-	
-		
 	}
 	
 	public static void main(String[] args) throws IOException {
