@@ -1,0 +1,13 @@
+## 파일 무시
+test.txt
+
+## 다음과 같은 확장자는 전체 무시
+*.text
+*.exe
+*.zip
+
+## 폴더 무시
+test/
+
+src/Java-BaekJoon-solved.iml
+src/out

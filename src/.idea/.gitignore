@@ -7,6 +7,8 @@
 /dataSources/
 /dataSources.local.xml
 
-*.iml
+src/Java-BaekJoon-solved.iml
 
 *.xml
+
+src/out
