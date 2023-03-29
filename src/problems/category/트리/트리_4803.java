@@ -26,6 +26,7 @@ public class 트리_4803 {
 			}
 		}
 	}
+
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args)throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

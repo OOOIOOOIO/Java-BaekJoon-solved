@@ -47,8 +47,6 @@ public class 여행가자_1976 {
 		
 		if(flag) System.out.println("YES");
 		else System.out.println("NO");
-		
-		
 	
 	
 	}
