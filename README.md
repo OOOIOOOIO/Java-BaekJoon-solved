@@ -1,4 +1,3 @@
 # Java-BaekJoon-solved
-Solving Algorithm Problem in BaekJoon use java
+Solving Algorithm Problem in BaekJoon
 
-이거 정리해야 할까....?

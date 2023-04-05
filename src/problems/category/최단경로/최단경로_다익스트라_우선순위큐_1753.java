@@ -87,11 +87,7 @@ public class 최단경로_다익스트라_우선순위큐_1753 {
 
 	
 	static void dijkstra(int start, int target) {
-		Queue<Node> queue = new PriorityQueue<Node>(new Comparator<Node>() {
-			public int compare(Node o1, Node o2) {
-				return o1.cost - o2.cost;
-			};
-		});
+		Queue<Node> queue = new PriorityQueue<Node>((o1, o2) -> o1.cost - o2.cost);
 		
 		// 시작 노드 
 		queue.offer(new Node(start, 0));

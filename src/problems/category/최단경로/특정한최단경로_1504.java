@@ -48,8 +48,6 @@ public class 특정한최단경로_1504 {
 			graph.add(new ArrayList<Node>());
 		}
 		
-
-		
 		
 		// 연결
 		for(int i = 0; i < E; i++) {
