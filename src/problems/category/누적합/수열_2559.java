@@ -23,6 +23,7 @@ public class 수열_2559 {
 		temp = new int[N - K + 1];
 		
 		st = new StringTokenizer(br.readLine());
+
 		for(int i = 0; i < N; i++) {
 			arr[i] = Integer.parseInt(st.nextToken());
 		}
