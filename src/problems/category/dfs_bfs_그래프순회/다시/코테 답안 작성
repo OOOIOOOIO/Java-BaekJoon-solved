@@ -1,0 +1,87 @@
+import java.util.*
+import java.io.*;
+
+public class Main(){
+
+    static int R;
+    static int C;
+    static String[][] map;
+    static boolean[][] visited;
+    static boolean[] alpha;
+    static int[] dy = {-1, 0, 1, 0}; // 상 좌 하 우
+    static int[] dx = {0, -1, 0, 1};
+    static int cnt = 1;
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	   	StringTokenizer st = null;
+
+	   	// 알파벳은 26개 A = 65, a = 97
+        alpha = new boolean[26];
+
+	    st = new StringTokenizer(br.readLine());
+	    R = Integer.parseInt(st.nextToken());
+	    C = Integer.parseInt(st.nextToken());
+
+	    map = new String[R][C];
+	    visited = new boolean[R][C];
+
+        bfs(y, x);
+
+        System.out.println(cnt);
+
+
+    }
+
+    static void bfs(int y, int x){
+        Queue<Integer[]> queue = new Queue<>();
+
+        queue.offer(new int[]{y,x});
+        alpha[map[y][x] - 95] = true; // 1,1의 알파벳
+        visited[y][x] = true; // 1,1 방문
+
+        // 4방향을 돈다
+        for(int i = 0; i < 4; i++){
+            int[] curr = queue.poll();
+
+            int nextY = curr[0] + dy[i];
+            int nextX = curr[1] + dx[i];
+
+            // 범위
+            if(nextY >= 0 && nextY < R && nextX >= 0 && nextX < C){
+                // 짝 = 새로
+                if(i % 2 == 0){
+                    // 알파벳 검사
+                    if(!alpha[i]){
+                        // 방문 검사
+                        if(!visited[nextY][nextX]){
+                            alpha[i] = ture;
+                            visited[nextY][nextX] = true;
+                            queue.offer(new int[]{nextY, nextX});
+                            cnt++;
+                        }
+                    }
+                }
+                else{
+                    // 홀 = 가로
+                    if(!visited[nextY][nextX]){
+                        alpha[i] = ture;
+                        visited[nextY][nextX] = true;
+                        queue.offer(new int[]{nextY, nextX});
+                        cnt++;
+                    }
+
+                }
+
+            }
+
+
+        }
+
+
+
+
+    }
+
+
+}

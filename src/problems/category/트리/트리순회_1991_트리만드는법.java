@@ -36,13 +36,36 @@ public class 트리순회_1991_트리만드는법 {
 				}
 			}
 			else {
-				serch(root, data, left, right);
+				search(root, data, left, right);
 				
 			}
 		}
 
+		public static void main(String[] args) throws IOException {
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+			int N = Integer.parseInt(br.readLine());
+
+			Tree tree = new Tree();
+
+			while(N-- > 0) {
+				char[] arr = br.readLine().replaceAll(" ", "").toCharArray();
+				char data = arr[0];
+				char left = arr[1];
+				char right = arr[2];
+
+				tree.makeTree(data, left, right);
+			}
+
+			preorder(tree.root);
+			System.out.println();
+			inorder(tree.root);
+			System.out.println();
+			postorder(tree.root);
+
+		}
 		// 두번째부터
-		public void serch(Node node, char data, char left, char right) {
+		public void search(Node node, char data, char left, char right) {
 			if(node == null) {
 				return;
 			}
@@ -57,8 +80,8 @@ public class 트리순회_1991_트리만드는법 {
 				}
 			}
 			else {
-				serch(node.left, data, left, right);
-				serch(node.right, data, left, right);
+				search(node.left, data, left, right);
+				search(node.right, data, left, right);
 			}
 		}
 		
@@ -84,29 +107,7 @@ public class 트리순회_1991_트리만드는법 {
 	
 	
 	
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		
-		int N = Integer.parseInt(br.readLine());
-		
-		Tree tree = new Tree();
-		
-		while(N-- > 0) {
-			char[] arr = br.readLine().replaceAll(" ", "").toCharArray();
-			char data = arr[0];
-			char left = arr[1];
-			char right = arr[2]; 
-			
-			tree.makeTree(data, left, right);
-		}
-		
-		preorder(tree.root);
-		System.out.println();
-		inorder(tree.root);
-		System.out.println();
-		postorder(tree.root);
-		
-	}
+
 }
 
 
