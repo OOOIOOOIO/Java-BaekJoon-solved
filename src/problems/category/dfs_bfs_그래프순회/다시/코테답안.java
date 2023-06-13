@@ -15,6 +15,7 @@ public class 코테답안 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = null;
+        StringBuilder sb = new StringBuilder();
 
         // 알파벳은 26개 A = 65, a = 97
         alpha = new boolean[26];
