@@ -126,18 +126,18 @@ public class 최단경로_다익스트라_우선순위큐_1753 {
 				}
 			}
 
-/* 같은 의미 			
-			for(Node item : graph.get(curr.nodeNum)) {
-				Node next = item;
-				
-				if(dp[next.nodeNum] > curr.cost + next.cost) {
-					
-					dp[next.nodeNum] = curr.cost + next.cost;
-					
-					queue.offer(new Node(next.nodeNum, dp[next.nodeNum]));
-				}
-			}			
-*/		
+
+//			for(Node item : graph.get(curr.nodeNum)) {
+//				Node next = item;
+//
+//				if(dp[next.nodeNum] > curr.cost + next.cost) {
+//
+//					dp[next.nodeNum] = curr.cost + next.cost;
+//
+//					queue.offer(new Node(next.nodeNum, dp[next.nodeNum]));
+//				}
+//			}
+
 		}
 	}
 	

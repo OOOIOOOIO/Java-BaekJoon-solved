@@ -1,9 +1,12 @@
-package problems.category.dfs_bfs_그래프순회.다시;
+package problems.category.최단경로;
 
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
-import java.io.*;
 
-public class Main{
+public class 서강그라운드_14938 {
 
     static class Node{
         int nodeNum;
@@ -18,9 +21,8 @@ public class Main{
 
     static int n, m, r;
     static int result = 0;
-    static ArrayList<Integer> itemList;
+    static ArrayList<Integer> itemList = new ArrayList<>();
     static ArrayList<ArrayList<Node>> graph;
-    static int[] dist;
     static int INF = Integer.MAX_VALUE;
 
 
@@ -38,21 +40,22 @@ public class Main{
         st = new StringTokenizer(br.readLine());
 
         // item
-        while(n-- > 0){
+        for(int i = 0; i < n; i++){
             itemList.add(Integer.parseInt(st.nextToken()));
         }
 
         // 초기화
-        dist = new int[n+1];
-        graph = new ArrayList<>();
 
-        Arrays.fill(dist, INF);
+        graph = new ArrayList<ArrayList<Node>>();
+
+
 
         for(int i = 0; i <= n; i++){
-            graph.add(new ArrayList<>());
+            graph.add(new ArrayList<Node>());
         }
 
-        while(r-- > 0){
+
+        for(int i = 0; i < r; i++){
             st = new StringTokenizer(br.readLine());
 
             int v1 = Integer.parseInt(st.nextToken());
@@ -64,8 +67,8 @@ public class Main{
         }
 
         for(int i = 1; i <= n; i++){
-            int sum = dijk(i);
-            result = Math.max(result, sum);
+            int[] dist = dijk(i);
+            result = Math.max(result, check(dist));
         }
 
         System.out.println(result);
@@ -75,37 +78,41 @@ public class Main{
 
     }
 
-    static int dijk(int start){
+    static int[] dijk(int start){
         Queue<Node> queue = new PriorityQueue<>((o1, o2) -> o1.cost - o2.cost);
-        int sum = 0;
         queue.offer(new Node(start, 0));
+        int[] dist = new int[n+1];
+        Arrays.fill(dist, INF);
+
         dist[start] = 0;
 
         while(!queue.isEmpty()){
             Node curr = queue.poll();
 
-            sum += itemList.get(curr.nodeNum);
-
             for(Node next : graph.get(curr.nodeNum)){
 
                 if(dist[next.nodeNum] > curr.cost + next.cost){
                     dist[next.nodeNum] = curr.cost + next.cost;
-
-                    if(dist[next.nodeNum] <= m){ // 거리 <= 수색범위
-                        queue.offer(new Node(next.nodeNum, dist[next.nodeNum]));
-
-                    }
-
+                    queue.offer(new Node(next.nodeNum, dist[next.nodeNum]));
                 }
+            }
+        }
+        return dist;
+
+
+    }
+
+    static int check(int[] dist){
+        int sum = 0;
+        for(int i = 1; i <= n; i++){
+            if(dist[i] <= m){
+                sum += itemList.get(i-1);
             }
         }
 
         return sum;
     }
 
-    static void check(){
-
-    }
-
 
 }
+

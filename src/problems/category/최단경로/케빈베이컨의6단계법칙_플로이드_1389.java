@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class 케빈베이컨의6단계법칙_1389 {
+public class 케빈베이컨의6단계법칙_플로이드_1389 {
 	static int[][] dp;
 	static int N, M;
 	static final int INF = 1073741823;// 1073741823.5 --> 1073741824 는 오류, INF + INF를 하면  int 최대값 넘어감(int max값 / 2 한 값)

@@ -19,7 +19,7 @@ import java.util.StringTokenizer;
 2 3 4
 3 1 8
  */
-public class 웜홀_1865 {
+public class 웜홀_벨멘_1865 {
 	
 	static class Node{
 		int nodeNum;

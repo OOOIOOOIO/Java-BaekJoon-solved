@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class 타임머신_벨멘포드_11657 {
+public class  타임머신_벨멘포드_11657 {
 	
 	static StringBuilder sb = new StringBuilder();
 	static long[] distance;
