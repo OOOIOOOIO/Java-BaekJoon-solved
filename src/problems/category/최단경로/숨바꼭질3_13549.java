@@ -11,7 +11,7 @@ public class 숨바꼭질3_13549 {
 	static int N, K, sec;
 	static final int max = 100001;
 	static StringBuilder sb = new StringBuilder();
-	static int[] visited = new int[max];
+	static int[] dist = new int[max];
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -24,7 +24,7 @@ public class 숨바꼭질3_13549 {
 		K = Integer.parseInt(st.nextToken());
 		
 		// 첫번째 방문을 확인하기 위해 1
-		visited[N] = 1;
+		dist[N] = 1;
 		
 		find();
 		
@@ -54,7 +54,7 @@ public class 숨바꼭질3_13549 {
 				
 				// 시작을 1로 하였으니 1 빼줌
 				if(curr == K) {
-					sb.append(visited[curr]-1);
+					sb.append(dist[curr]-1);
 					return;
 				}
 				
@@ -71,10 +71,10 @@ public class 숨바꼭질3_13549 {
 						
 						if(next >= 0 && next < max) {
 							// 방문하지 않았거나 next 위치의 cnt가 현재 cnt보다 클 경우 더 작은 횟수로 설정하지(다음 위치의  횟수가 더 많으면 최단거리로 바꿔주기)
-							if(visited[next] == 0 || visited[next] > visited[curr]) {
+							if(dist[next] == 0 || dist[next] > dist[curr]) {
 								
 								queue.offer(next);
-								visited[next] = visited[curr];
+								dist[next] = dist[curr];
 							}
 						}
 						continue;
@@ -83,9 +83,9 @@ public class 숨바꼭질3_13549 {
 					
 					if(next >= 0 && next < max) {
 						// 방문하지 않았거나 next 위치의 cnt가 현재 cnt보다 클 경우 더 작은 횟수로 설정하지(다음 위치의  횟수가 더 많으면 최단거리로 바꿔주기)
-						if(visited[next] == 0 || visited[next] > visited[curr] + 1) {
+						if(dist[next] == 0 || dist[next] > dist[curr] + 1) {
 							queue.offer(next);
-							visited[next] = visited[curr] + 1;
+							dist[next] = dist[curr] + 1;
 						}
 					}
 					

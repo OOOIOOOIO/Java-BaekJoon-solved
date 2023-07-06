@@ -1,7 +1,5 @@
 package problems.category.백트래킹;
 
-import problems.category.dfs_bfs_그래프순회.다시.Main;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

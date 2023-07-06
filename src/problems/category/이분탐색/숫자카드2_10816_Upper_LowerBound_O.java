@@ -43,6 +43,8 @@ public class 숫자카드2_10816_Upper_LowerBound_O {
 		}
 		return left;
 	}
+
+
 	public static void main(String[] args)throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
@@ -67,9 +69,8 @@ public class 숫자카드2_10816_Upper_LowerBound_O {
 		}
 		
 		System.out.println(sb);
-		
-		
-		
 
 	}
+
+
 }
