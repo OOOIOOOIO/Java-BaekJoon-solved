@@ -1,4 +1,4 @@
-package problems.category.삼성SW역량테스트기출문제;
+package problems.삼성SW역량테스트기출문제;
 
 import java.io.BufferedReader;
 import java.io.IOException;
