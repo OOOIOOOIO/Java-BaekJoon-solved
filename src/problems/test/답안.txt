@@ -1,59 +1,21 @@
+
+
+
 import java.util.*;
 import java.io.*;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = null;
         StringBuilder sb = new StringBuilder();
-
-        int N = Integer.parseInt(br.readLine());
-        Integer[][] players = new Integer[1000001][1000001];
-
-        String[] scores = br.readLine().split(" ");
-
-        for(int i = 0; i < scores.length; i++){
-            for(int j = i+1; j < scores.length; i++){
-                if(players[i][j[] == null){
-                    if(scores[j] % scores[i] == 0){ // 내가 이김
-                        if(players[i][j] == null){
-                            players[i][j] = 1;
-                            if(players[j][i] == null){
-                                players[j][i] = -1;
-                            }
-                        }
-                        else{
-                            players[i][j] += 1;
-                            players[j][i] -= 1;
-                        }
-
-                    }
-                }
-            }
-        }
-
-
-        for(int i = 0; i < scores.length; i++){
-            int sum = 0;
-            int me = Integer.parseInt(scores[i]);
-            for(int j = 0; j < scores.length; i++){
-                int other = Integer.parseInt(scores[j]);
-
-                if(me == other) continue;
-
-                sum += players[me][others];
-
-            }
-            sb.append(sum + " ");
-        }
-
 
 
 
     }
 
 }
-
 // ==================================
 
 import java.util.*;
@@ -61,7 +23,10 @@ import java.io.*;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = null;
+        StringBuilder sb = new StringBuilder();
 
 
 

@@ -1,7 +1,12 @@
-import java.util.*;
-import java.io.*;
+package problems.category.백트래킹;
 
-public class Main {
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class 테트로노미노_14500_dfs_백트래킹 {
+
 
     static int N;
     static int M;
@@ -28,13 +33,13 @@ public class Main {
             if(nextY >= 0 && nextX >= 0 && nextY < N && nextX < M){
 
                 // 아직 방문하지 않았을 때
-                if(visited[nextY][nextX]){
+                if(!visited[nextY][nextX]){
 
                     // ㅜ, ㅏ, ㅓ, ㅗ 일 경우
                     if(depth == 2){
-                         visited[nextY][nextX] = true;
-                         dfs(nextY, nextX, sum + map[nextY][nextX], depth + 1);
-                         visited[nextY][nextX] = false;
+                        visited[nextY][nextX] = true;
+                        dfs(y, x, sum + map[nextY][nextX], depth + 1);
+                        visited[nextY][nextX] = false;
                     }
                     visited[nextY][nextX] = true;
                     dfs(nextY, nextX, sum + map[nextY][nextX], depth + 1);
@@ -45,14 +50,16 @@ public class Main {
 
     }
 
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = null;
         StringBuilder sb = new StringBuilder();
 
         st = new StringTokenizer(br.readLine());
         N = Integer.parseInt(st.nextToken());
-        N = Integer.parseInt(st.nextToken());
+        M = Integer.parseInt(st.nextToken());
+        map = new int[N][M];
+        visited = new boolean[N][M];
 
         // 입력
         for(int i = 0; i < N; i++){
@@ -78,18 +85,3 @@ public class Main {
 
 }
 
-// ==================================
-
-import java.util.*;
-import java.io.*;
-
-public class Main {
-
-    public static void main(String[] args) {
-
-
-
-
-    }
-
-}
