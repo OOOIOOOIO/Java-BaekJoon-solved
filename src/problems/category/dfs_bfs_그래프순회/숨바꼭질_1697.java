@@ -25,7 +25,6 @@ public class 숨바꼭질_1697 {
 		N = Integer.parseInt(st.nextToken());
 		// 동생
 		K = Integer.parseInt(st.nextToken());
-		
 		// 1부터 시작
 		visited[N] = 1;
 		
