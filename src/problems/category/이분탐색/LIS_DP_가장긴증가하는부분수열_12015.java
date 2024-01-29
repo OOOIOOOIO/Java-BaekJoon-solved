@@ -68,6 +68,7 @@ public class LIS_DP_가장긴증가하는부분수열_12015 {
 
 		System.out.println(max);
 	}
+
 }
 
 
