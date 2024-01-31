@@ -4,8 +4,8 @@ import java.util.*;
 import java.io.*;
 public class 최소비용구하기2_11779 {
 
-//    static ArrayList<ArrayList<Node>> graph;
-    static ArrayList<Node>[] graph2;
+    static ArrayList<ArrayList<Node>> graph;
+//    static ArrayList<Node>[] graph2;
     static int n;
     static int m;
     static int[] dist;
@@ -36,13 +36,14 @@ public class 최소비용구하기2_11779 {
                 continue;
             }
 
-            for (Node item : graph2[curr.node]) {
-                Node next = item;
+            for (Node next : graph.get(curr.node)) {
 
                 if (dist[next.node] > curr.cost + next.cost) {
                     dist[next.node] = curr.cost + next.cost;
                     queue.offer(new Node(next.node, dist[next.node]));
-                    prev[next.node] = curr.node;
+                    prev[next.node] = curr.node; // [next] = prev 느낌
+//                    System.out.println("next : " + next.node);
+//                    System.out.println("curr : " + curr.node);
                 }
             }
         }
@@ -55,12 +56,17 @@ public class 최소비용구하기2_11779 {
 
         n = Integer.parseInt(br.readLine());
         m = Integer.parseInt(br.readLine());
-        dist = new int[n+1];
-        prev = new int[n+1];
-        graph2 = new ArrayList[n + 1];
-        for(int i = 0; i <= n; i++) {
-            graph2[i] = new ArrayList<>();
+        dist = new int[n + 1];
+        prev = new int[n + 1];
+
+        graph = new ArrayList<>();
+        for (int i = 0; i <= n; i++){
+            graph.add(new ArrayList<Node>());
         }
+//        graph2 = new ArrayList[n + 1];
+//        for(int i = 0; i <= n; i++) {
+//            graph2[i] = new ArrayList<>();
+//        }
 
         Arrays.fill(dist, Integer.MAX_VALUE);
 
@@ -71,8 +77,8 @@ public class 최소비용구하기2_11779 {
             int cost = Integer.parseInt(st.nextToken());
 
             // v1 --> v2 연
-            graph2[v1].add(new Node(v2, cost));
-
+//            graph2[v1].add(new Node(v2, cost));
+            graph.get(v1).add(new Node(v2, cost));
         }
 
         st = new StringTokenizer(br.readLine());
@@ -81,21 +87,29 @@ public class 최소비용구하기2_11779 {
 
         dijk(s);
 
+        for(int i = 0; i < prev.length; i++){
+            System.out.println(i + " : " + prev[i]);
+        }
         sb.append(dist[e]+"\n");
+//        System.out.println(dist[e] + "\n");
+
         int cnt = 0;
         Stack<Integer> stack = new Stack<>();
         stack.push(e);
-        while (dist[e] != 0){
-            int prev = dist[e];
-            stack.push(prev);
+
+        while (prev[e] != 0){ // start는 무조건 0이니
+            System.out.println("prev : " + prev[e]);
+            stack.push(prev[e]);
             cnt++;
-            e = prev;
+            e = prev[e];
         }
 
 
         sb.append(stack.size() + "\n");
+//        System.out.println(stack.size() + "\n");
         while (!stack.isEmpty()) {
             sb.append(stack.pop() + " ");
+//            System.out.println(stack.pop() + " ");
         }
 
 
