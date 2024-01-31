@@ -68,12 +68,14 @@ public class 최소비용구하기_1916 {
 	}
 	
 	static void dijkstra(int start, int target) {
-		Queue<Node> queue = new PriorityQueue<Node>(new Comparator<Node>() {
-			@Override
-			public int compare(Node o1, Node o2) {
-				return o1.cost - o2.cost;
-			}
-		});
+		Queue<Node> queue = new PriorityQueue<Node>((o1, o2) -> o1.cost - o2.cost);
+
+//		Queue<Node> queue = new PriorityQueue<Node>(new Comparator<Node>() {
+//			@Override
+//			public int compare(Node o1, Node o2) {
+//				return o1.cost - o2.cost;
+//			}
+//		});
 		dist[start] = 0;
 		
 		queue.offer(new Node(start, 0));
@@ -90,7 +92,7 @@ public class 최소비용구하기_1916 {
 			for(Node next : graph.get(curr.nodeNum)) {
 				
 				if(dist[next.nodeNum] > curr.cost + next.cost) { // 2. dist[curr.nodeNum]이 아니라 curr.cost이다.
-					dist[next.nodeNum] = curr.cost + next.cost;  // 3.  사실 dist[curr.nodeNum] 이여도 상관 없는데 Node 객체를 사용하기 때문에 이렇게 쓴다!
+					dist[next.nodeNum] = curr.cost + next.cost;
 					queue.offer(new Node(next.nodeNum, dist[next.nodeNum])); // 1. 넘겨줄 때 dist[]로 넘겨주기 때문에
 				
 				}
