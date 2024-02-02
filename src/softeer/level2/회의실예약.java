@@ -12,7 +12,7 @@ public class 회의실예약 {
     public static void main(String[] args) throws IOException {
         StringBuilder sb = new StringBuilder();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-됨
+
         StringTokenizer st = new StringTokenizer(br.readLine());
 
         int N = Integer.parseInt(st.nextToken());    // 회의실 수
