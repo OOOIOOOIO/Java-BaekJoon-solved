@@ -32,18 +32,14 @@ public class 우선_절대값힙_11286 {
 		Queue<Integer> queue = new PriorityQueue<Integer>((a1, a2) -> a1 == a2 ? Integer.compare(a1, a2) : Integer.compare(a1, a2));
 		
 		
-		Queue<Integer> quq = new PriorityQueue<Integer>(new Comparator<Integer>() {
-			
-			@Override
-			public int compare(Integer o1, Integer o2) {
-				// comparator는  항상 o1이 기준이다. / comparable은 this(자기자신)이 기준이다.
-				if(Math.abs(o1) == Math.abs(o2)) {
-					return o1 < o2 ? -1 : 1;
-				}
-				
-				// o1이 클 경우 return9 양수 : 내림차순  / o1이 작을 경우 return 음수 : 오름차순
-				return Math.abs(o1) - Math.abs(o2);
+		Queue<Integer> quq = new PriorityQueue<Integer>((o1, o2) -> {
+			// comparator는  항상 o1이 기준이다. / comparable은 this(자기자신)이 기준이다.
+			if(Math.abs(o1) == Math.abs(o2)) {
+				return o1 < o2 ? -1 : 1;
 			}
+
+			// o1이 클 경우 return9 양수 : 내림차순  / o1이 작을 경우 return 음수 : 오름차순
+			return Math.abs(o1) - Math.abs(o2);
 		});
 		
 //		Queue<Integer> quqd = new LinkedList<Integer>(
