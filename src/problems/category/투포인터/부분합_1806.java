@@ -49,6 +49,8 @@ public class 부분합_1806 {
 			
 		System.out.println(length == Integer.MAX_VALUE ? 0 : length);
 	}
+
+
 }
 
 

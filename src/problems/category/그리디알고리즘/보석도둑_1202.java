@@ -32,6 +32,15 @@ public class 보석도둑_1202 {
             jewelries[i] = new Jewel(m, v);
         }
 
+        List<Jewel> list = new ArrayList<>();
+
+        Collections.sort(list, (o1, o2) -> {
+            if (o1.weight == o2.weight) {
+                return o2.price - o1.price;
+            }
+            return o1.weight - o2.weight;
+        });
+
         // 무게를 오름차순 정렬하되, 무게가 같을 경우 가격을 내림차순 정렬.
         Arrays.sort(jewelries, (o1, o2) -> {
             if (o1.weight == o2.weight) {
