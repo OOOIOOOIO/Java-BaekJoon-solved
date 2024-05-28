@@ -6,6 +6,8 @@ import java.time.YearMonth;
 public class te {
 
     public static void main(String[] args) {
+        byte[] aa = new byte[32];
+
         LocalDate now = LocalDate.now();
 
         LocalDate start = LocalDate.of(2024, 05, 01);
