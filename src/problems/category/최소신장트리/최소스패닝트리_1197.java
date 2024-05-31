@@ -76,12 +76,7 @@ public class 최소스패닝트리_1197 {
 	
 	static void prim() {
 //		Queue<Node> queue = new LinkedList<Node>();
-		Queue<Node> queue = new PriorityQueue<Node>(new Comparator<Node>() {
-			@Override
-			public int compare(Node o1, Node o2) {
-				return o1.cost - o2.cost;
-			}
-		});
+		Queue<Node> queue = new PriorityQueue<Node>((o1, o2) -> o1.cost - o2.cost);
 		
 		queue.offer(new Node(1, 0));
 		

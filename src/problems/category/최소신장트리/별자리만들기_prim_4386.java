@@ -77,13 +77,7 @@ public class 별자리만들기_prim_4386 {
 	}
 	
 	static void prim() {
-		Queue<Star> queue = new PriorityQueue<Star>(new Comparator<Star>() {
-			@Override
-			public int compare(Star o1, Star o2) {
-
-				return (int)(o1.cost - o2.cost);
-			}
-		});
+		Queue<Star> queue = new PriorityQueue<Star>((o1, o2) -> (int)(o1.cost - o2.cost));
 		
 		queue.offer(new Star(1, 0));
 		
