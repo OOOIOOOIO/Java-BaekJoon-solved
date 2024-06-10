@@ -10,43 +10,6 @@ public class ACM_craft_1005 {
     static ArrayList<ArrayList<Integer>> graph;
 
 
-    public static void topologicalSort(String[] cost){
-
-        // 여기부터 위상정렬
-        Queue<Integer> queue = new LinkedList<>();
-
-        // 진입차수가 0인 애들 넣기
-        for(int i = 1; i <= N; i++){
-
-            dp[i] = Integer.parseInt(cost[i-1]);
-
-            if(inDegree[i] == 0){
-                queue.offer(i);
-            }
-        }
-
-        while(!queue.isEmpty()){
-
-            int curr = queue.poll();
-
-            for(Integer next : graph.get(curr)){
-
-                dp[next] = Math.max(dp[next], Integer.parseInt(cost[next-1]) + dp[curr]);
-
-                inDegree[next]--;
-
-                if(inDegree[next] == 0){
-                    queue.offer(next);
-                }
-
-            }
-
-        }
-
-
-
-    }
-
     public static void main(String[] args) throws IOException{
 
         /** 위상정렬 TopologicalSort */
@@ -91,6 +54,40 @@ public class ACM_craft_1005 {
 
     }
 
+    public static void topologicalSort(String[] cost){
+
+        // 여기부터 위상정렬
+        Queue<Integer> queue = new LinkedList<>();
+
+        // 진입차수가 0인 애들 넣기
+        for(int i = 1; i <= N; i++){
+
+            dp[i] = Integer.parseInt(cost[i-1]);
+
+            if(inDegree[i] == 0){
+                queue.offer(i);
+            }
+        }
+
+        while(!queue.isEmpty()){
+
+            int curr = queue.poll();
+
+            for(Integer next : graph.get(curr)){
+
+                dp[next] = Math.max(dp[next], Integer.parseInt(cost[next-1]) + dp[curr]);
+
+                inDegree[next]--;
+
+                if(inDegree[next] == 0){
+                    queue.offer(next);
+                }
+
+            }
+
+        }
+
+    }
 
 
 }
