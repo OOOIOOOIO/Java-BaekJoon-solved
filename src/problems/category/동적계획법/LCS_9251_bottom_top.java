@@ -19,7 +19,7 @@ public class LCS_9251_bottom_top {
 		
 		// topDown
 		// ↓ str2, → str1 로 2차원을 만들어야된다!
-		topDown = new Integer[str1.length()][str2.length()];
+		topDown = new Integer[str2.length()][str1.length()];
 		
 		// bottomUP
 		// ↓ str2, → str1 로 2차원을 만들어야된다! 또한 이전 요소와 비교하므로 크기를 +1 해준다.
@@ -38,12 +38,30 @@ public class LCS_9251_bottom_top {
 				
 			}
 		}
+
+
+		for(int i = 1; i <= str1.length(); i++) {
+
+			for(int j = 1; j <= str2.length(); j++) {
+				System.out.print(bottomUp[i][j]);
+			}
+			System.out.println();
+		}
+
 		
 		// bottomUp
 		System.out.println(bottomUp[str1.length()][str2.length()]);
 		
 		// topDown
 		System.out.println(LCS(str2.length()-1, str1.length()-1));
+
+		for(int i = 1; i <= str1.length(); i++) {
+
+			for(int j = 1; j <= str2.length(); j++) {
+				System.out.print(bottomUp[i][j]);
+			}
+			System.out.println();
+		}
 	}
 	
 	static int LCS(int y, int x) {
