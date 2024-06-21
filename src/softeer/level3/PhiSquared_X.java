@@ -3,7 +3,7 @@ package softeer.level3;
 import java.io.*;
 import java.util.*;
 
-public class PhiSquared {
+public class PhiSquared_X {
     static int N;
     static int pos;
     static int val;

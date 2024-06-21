@@ -3,7 +3,7 @@ package softeer.level3;
 import java.io.*;
 import java.util.*;
 
-public class 나무섭지 {
+public class 나무섭지_X {
 
     static int n, m;
     static int[][] map;

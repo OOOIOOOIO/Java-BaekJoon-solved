@@ -4,7 +4,7 @@ package softeer.level3;
 import java.io.*;
 import java.util.*;
 
-public class 효도여행 {
+public class 효도여행_X {
 
     static class Node{
         int nodeNum;
