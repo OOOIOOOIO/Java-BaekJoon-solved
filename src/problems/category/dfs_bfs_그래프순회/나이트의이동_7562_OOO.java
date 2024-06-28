@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class 나이트의이동_7562 {
+public class 나이트의이동_7562_OOO {
 	
 	static int[][] chess;
 	static boolean[][] visited;

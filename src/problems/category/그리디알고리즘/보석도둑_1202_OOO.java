@@ -4,17 +4,18 @@ import java.io.*;
 import java.util.*;
 
 
-class Jewel {
-    int weight; // 무게
-    int price; // 가격
 
-    Jewel(int weight, int price) {
-        this.weight = weight;
-        this.price = price;
+
+public class 보석도둑_1202_OOO {
+    static class Jewel {
+        int weight; // 무게
+        int price; // 가격
+
+        Jewel(int weight, int price) {
+            this.weight = weight;
+            this.price = price;
+        }
     }
-}
-
-public class 보석도둑_1202 {
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

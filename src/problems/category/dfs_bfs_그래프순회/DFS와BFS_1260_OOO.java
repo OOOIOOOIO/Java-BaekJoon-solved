@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
 
-public class DFS와BFS_1260 {
+public class DFS와BFS_1260_OOO {
 	static int[][] graph;
 	static boolean[] visited;
 	static boolean[] visited2;
