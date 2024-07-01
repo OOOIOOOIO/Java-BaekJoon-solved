@@ -8,7 +8,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class 단지번호붙이기_BFS_2667 {
+public class 단지번호붙이기_BFS_2667_OOO {
 	
 	static int[][] graph;
 	static boolean[][] visited;

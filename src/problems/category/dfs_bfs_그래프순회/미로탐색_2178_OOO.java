@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class 미로탐색_2178 {
+public class 미로탐색_2178_OOO {
 	static int N, M;
 	static int min, cnt;
 	static int[][] maze;

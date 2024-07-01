@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 
-public class 미세먼지안녕_17144 {
+public class 미세먼지안녕_17144_OOO {
 	
 	static int R, C, T;
 	static int[][] map = new int[50][50];

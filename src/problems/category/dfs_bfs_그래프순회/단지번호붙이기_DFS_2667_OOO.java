@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.StringTokenizer;
 
-public class 단지번호붙이기_DFS_2667 {
+public class 단지번호붙이기_DFS_2667_OOO {
 	static int[][] graph;
 	static boolean[][] visited; 
 	static int[] dx = {0, -1, 0, 1}; // 좌 우 {x, x, x, x}  
