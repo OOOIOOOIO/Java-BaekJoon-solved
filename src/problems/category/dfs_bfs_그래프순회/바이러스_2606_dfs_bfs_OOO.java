@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class 바이러스_2606_dfs_bfs {
+public class 바이러스_2606_dfs_bfs_OOO {
 	
 	static ArrayList<Integer>[] graph;
 	static ArrayList<ArrayList<Integer>> graph2;
