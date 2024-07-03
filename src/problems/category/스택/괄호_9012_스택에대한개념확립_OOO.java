@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Stack;
 
-public class 괄호_9012_스택에대한개념확립_O {
+public class 괄호_9012_스택에대한개념확립_OOO {
 	
 	public static String match(String input) {
 		Stack<Character> stack = new Stack<Character>();

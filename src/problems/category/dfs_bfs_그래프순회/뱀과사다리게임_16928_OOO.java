@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class 뱀과사다리게임_16928 {
+public class 뱀과사다리게임_16928_OOO {
 	
 	static int[] map = new int[101];
 	static boolean[] visited = new boolean[101];
