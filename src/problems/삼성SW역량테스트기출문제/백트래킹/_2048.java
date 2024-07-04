@@ -1,4 +1,4 @@
-package problems.삼성SW역량테스트기출문제;
+package problems.삼성SW역량테스트기출문제.백트래킹;
 
 import java.util.*;
 import java.io.*;

@@ -1,7 +1,12 @@
-package problems.category.구현;
+package problems.삼성SW역량테스트기출문제.구현;
 
-import java.util.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.StringTokenizer;
 
 public class 뱀_3190 {
 

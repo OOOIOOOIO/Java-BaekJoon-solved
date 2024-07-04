@@ -1,4 +1,4 @@
-package problems.삼성SW역량테스트기출문제;
+package problems.삼성SW역량테스트기출문제.수학;
 
 import java.util.*;
 import java.io.*;

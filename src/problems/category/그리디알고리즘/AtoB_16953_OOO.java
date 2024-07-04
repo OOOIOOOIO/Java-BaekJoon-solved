@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class AtoB_16953_bfs {
+public class AtoB_16953_OOO {
     static long target;
     static long first;
     public static void main(String[] args) throws IOException {
@@ -43,6 +43,23 @@ public class AtoB_16953_bfs {
         }
 
         return -1;
+    }
+
+    static int ans = 0;
+    private static void dfs(long A, long B, int cnt) {
+
+        if (A > B) {
+            return;
+        }
+
+        if (A == B) {
+            ans = Math.min(ans, cnt);
+            return;
+        }
+
+        dfs(A * 2, B, cnt + 1);
+
+        dfs((A * 10) + 1, B, cnt + 1);
     }
 
 }

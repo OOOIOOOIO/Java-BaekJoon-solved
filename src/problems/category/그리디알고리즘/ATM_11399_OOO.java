@@ -8,7 +8,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class ATM_11399 {
+public class ATM_11399_OOO {
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = null;
@@ -41,5 +41,24 @@ public class ATM_11399 {
 		
 		
 		System.out.println(sum);
+	}
+
+	public static void solve2(int[] arr, int[] dp){
+		Arrays.sort(arr);
+
+		dp[0] = arr[0];
+		for(int i = 1; i < arr.length; i++){
+			dp[i] = dp[i-1] + arr[i];
+		}
+
+		int sum = 0;
+
+		for(int i = 0; i < dp.length; i++){
+			sum += dp[i];
+		}
+
+
+		System.out.println(sum);
+
 	}
 }

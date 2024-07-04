@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class 벽부수고이동하기_2206 {
+public class 벽부수고이동하기_2206_XXX {
 	
 	static int N, M;
 	static int[][] map;
