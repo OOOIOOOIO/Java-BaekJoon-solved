@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class _01타일_1904 {
+public class _01타일_1904_OOO {
 	static int[] dp = new int[1000000];
 
 	static int check(int N) {
