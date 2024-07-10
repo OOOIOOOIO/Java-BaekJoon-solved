@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class _1로만들기_1463 {
+public class _1로만들기_1463_OOO {
 	 
 		static Integer[] dp;
 	 
