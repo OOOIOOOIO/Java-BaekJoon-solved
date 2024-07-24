@@ -43,8 +43,8 @@ public class 사다리조작_15684 {
         for (int i = row; i < h + 1; i++) {
             for (int j = 1; j < n; j++) {
                 if (map[i][j] == 0 && map[i][j + 1] == 0) {
-                    map[i][j] = 1;
-                    map[i][j + 1] = 2;
+                    map[i][j] = 1; // 가로작대기 시작위치
+                    map[i][j + 1] = 2; // 가로작대기 끝위치
                     dfs(i, count + 1);
                     map[i][j] = map[i][j + 1] = 0;
                 }
@@ -65,6 +65,7 @@ public class 사다리조작_15684 {
 
             if (col != i) return false;
         }
+
         return true;
     }
 }
