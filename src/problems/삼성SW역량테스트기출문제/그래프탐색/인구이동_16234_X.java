@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.*;
 
 
-public class 인구이동_16234 {
+public class 인구이동_16234_X {
 
     static int N, L, R;
     static int[][] population;
@@ -48,8 +48,9 @@ public class 인구이동_16234 {
                     }
                 }
             }
-            if (!isMove)
-                return result;
+
+            if (!isMove) return result;
+
             result++;
         }
     }
@@ -69,8 +70,10 @@ public class 인구이동_16234 {
             for (int i = 0; i < 4; i++) {
                 int nx = current.x + dx[i];
                 int ny = current.y + dy[i];
+
                 if (nx >= 0 && ny >= 0 && nx < N && ny < N && !visited[nx][ny]) {
                     int diff = Math.abs(population[current.x][current.y] - population[nx][ny]);
+
                     if (L <= diff && diff <= R) {
                         q.offer(new Node(nx, ny));
                         migrationNodes.add(new Node(nx, ny));
@@ -80,6 +83,7 @@ public class 인구이동_16234 {
                 }
             }
         }
+
         return sum;
     }
 
@@ -90,6 +94,7 @@ public class 인구이동_16234 {
         }
     }
 
+
     public static class Node {
         int x;
         int y;
@@ -99,7 +104,10 @@ public class 인구이동_16234 {
             this.y = y;
         }
     }
+
+
 }
+
 //
 //public class 인구이동_16234{
 //
