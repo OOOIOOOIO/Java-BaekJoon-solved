@@ -3,33 +3,19 @@ package problems.AAA;
 import java.util.*;
 import java.io.*;
 
+import java.util.*;
+import java.io.*;
+
 public class Main{
+
     public static void main(String[] args) {
-        A b = new B();
-        b.paint();
-        b.draw();
-    }
+        String a = "it";
+        String b = "abd";
+        String c = "im";
 
+        System.out.println(a.compareTo(c));
 
-    static class A {
-        public void paint() {
-            System.out.print("A");
-            this.draw();
-        }
-        public void draw() {
-            System.out.print("B");
-            draw();
-        }
-    }
-
-    static class B extends A {
-        public void paint() {
-            super.draw();
-            System.out.print("C");
-            this.draw();
-        }
-        public void draw() {
-            System.out.print("D");
-        }
     }
 }
+
+
