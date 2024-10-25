@@ -41,4 +41,29 @@ public class _2n타일링_11726 {
 		
 		
 	}
+
+
+	static int N;
+	static Integer[] dp2;
+	public static void main2(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		N = Integer.parseInt(br.readLine());
+		dp2 = new Integer[N+2];
+
+		dp[0] = 0;
+		dp[1] = 1;
+		dp[2] = 2;
+
+		System.out.println(recur(N));
+	}
+
+	public static int recur(int N){
+
+		if(dp2[N] != null){
+			return dp[N];
+		}
+
+		return dp[N] = (recur(N-1) + recur(N-2)) % 10007;
+	}
 }
