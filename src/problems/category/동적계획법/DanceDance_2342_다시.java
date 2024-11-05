@@ -2,9 +2,8 @@ package problems.category.동적계획법;
 
 import java.util.*;
 import java.io.*;
-import java.util.stream.*;
 
-public class DanceDance_2342 {
+public class DanceDance_2342_다시 {
     static int ans = 0;
     static int[] arr;
     static int[][][] dp; //1,2,3,4 방향 = [5]
@@ -38,9 +37,11 @@ public class DanceDance_2342 {
         dp[left][right][idx] = Math.min(solve(arr[idx], right, idx + 1) + getScore(left, arr[idx]),
                 solve(left, arr[idx], idx + 1) + getScore(right, arr[idx]));
 
+
+//        Math.min(solve(arr[idx], right, idx + 1) + getScore(left, arr[idx]), solve(left, arr[idx], idx + 1) + getScore(right, arr[idx]));
+        //min(solve(다음 움직일 위치, 오른쪽, 다다음 움직일 위치) + getScore(현재 왼쪽, 다음 움직일 위치)), solve(현재 왼쪽, 다음 움직일 위치, 다다음 움직일 위치 + getScore(현재 오른쪽, 다음 움직일 위치))
+
         return dp[left][right][idx];
-
-
     }
 
     private static int getScore(int currPos, int nextPos){

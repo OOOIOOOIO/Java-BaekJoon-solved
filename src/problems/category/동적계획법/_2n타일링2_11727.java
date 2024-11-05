@@ -18,4 +18,5 @@ public class _2n타일링2_11727 {
 
         System.out.println(dp[n]);
     }
+
 }

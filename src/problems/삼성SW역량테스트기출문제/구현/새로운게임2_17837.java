@@ -11,7 +11,7 @@ public class 새로운게임2_17837{
         int dir;
         int seq;
 
-        public Chess(int y, int x, int dir,){
+        public Chess(int y, int x, int dir){
             this.y = y;
             this.x = x;
             this.dir = dir;
@@ -97,10 +97,10 @@ public class 새로운게임2_17837{
                 // 색에 따라 action 취하기
                 // 파
                 if(nextY > N && nextX > N){
-                    blue();
+//                    blue();
                 }
                 else if(map[nextY][nextX] == 2){
-                    blue();
+//                    blue();
                 }
                 // 흰
                 else if(map[nextY][nextX] == 0){
@@ -153,7 +153,7 @@ public class 새로운게임2_17837{
         int x = chessList.get(0).x;
 
         for(int i = 1; i < K; i++){
-            if(y != chessList.get(i).y || x != chessList.get(i)).x return false;
+//            if(y != chessList.get(i).y || x != chessList.get(i)).x return false;
         }
 
         return true;
