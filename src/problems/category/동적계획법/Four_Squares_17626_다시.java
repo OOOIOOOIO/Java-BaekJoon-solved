@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Four_Squares_17626 {
+public class Four_Squares_17626_다시 {
 
     static int[] dp;
     public static void main(String[] args) throws IOException {
@@ -20,6 +20,7 @@ public class Four_Squares_17626 {
 
         for(int i = 2; i <= N; i++){ // 브루트포스 다 돌림
             int min = Integer.MAX_VALUE;
+
             for(int j  = 1; j*j <= i; j++){ // 여기서 제곱 조건
                 int rest = (int)(i - Math.pow(j,2)); // 나머지
                 min = Math.min(min, dp[rest]); //

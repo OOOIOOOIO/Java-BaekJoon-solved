@@ -5,152 +5,65 @@ import java.io.*;
 
 public class Main{
 
-    static class Foot{
-        int right;
-        int left;
-        int score;
-
-        public Foot(int right, int left){
-            this.right = right;
-            this.left = left;
-            this.score = 0;
-        }
-
-        public void updateRight(int right){
-            this.right = right;
-        }
-
-        public void updateLeft(int left){
-            this.left = left;
-        }
-
-        public void sumScore(int score){
-            this.score += score;
-        }
-
-    }
+    static int n;
+    static Integer dp[];
+    static int ans = Integer.MAX_VALUE;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
+        n = Integer.parseInt(br.readLine());
+        dp = new Integer[5];
 
-        String[] move = br.readLine().split(" ");
-
-        int ans = solve(move);
+        solve(n, 0);
 
         System.out.println(ans);
-
     }
 
     /**
-
-     L, R 두개 필요(현재 위치)
-     그때그떄 최단거리 비교해서 최신화
-     누적합
-
+     최댓값을 제곱해서만 하면 안된다 -> 4개 안에 못할 수도 있음
+     모든 경우의 수 구하기
      */
 
-    //순회
-    public static int solve(String[] move){
-        Foot foot = new Foot(0, 0);
+    public static void solve(int n, int cnt){
 
-        for(String m : move){
-            int dir = Integer.parseInt(m);
+        // 횟수 넘어가면 종료
+        if(cnt > 4) return;
 
-            if(dir == 0) return foot.score;
+//        System.out.println((int)Math.sqrt(n));
 
-            //둘 다 0일 경우 : 왼쪽부터
-            if(foot.left == 0 && foot.right == 0){
-                foot.updateLeft(dir);
-                foot.sumScore(2);
-            }
-            //왼쪽이 0일 경우
-            else if(foot.left == 0 && foot.right != 0){
-                foot.updateLeft(dir);
-                foot.sumScore(2);
-            }
-            //오른쪽이 0일 경우
-            else if(foot.left != 0 && foot.right == 0){
-                foot.updateRight(dir);
-                foot.sumScore(2);
-            }
-            //그 외 -> 비교
-            else{
-                compare(dir, foot);
+        // 1부터 ㄱ
+        for(int i = 1; i <= (int)Math.sqrt(n); i++){
+
+            int temp = (int)Math.pow((int)Math.sqrt(i), 2);
+
+            // 더 크면 종료
+            if(temp > n) return;
+
+            // 같으면 끝내기
+            if(temp == n){
+//                System.out.println("SAdfasfdfsfsd");
+                ans = Math.min(ans, cnt+1);
             }
 
+//            System.out.println("i = " + i);
+//            System.out.println("temp = " + temp);
+            // n 최신화
+            n -= temp;
+
+            solve(n, cnt+1);
 
         }
 
-        return 0;
 
-    }
 
-    // 비교
-    // LR둘 다 근접해 있을 경우 왼쪽 옮기기
-    public static void compare(int dir, Foot foot){
-        int left = foot.left;
-        int right = foot.right;
-        // 우선 같은 위치인지 확인
-        if(dir == left){
-            foot.sumScore(1);
-            return;
-        }
 
-        if(dir == right){
-            foot.sumScore(1);
-            return;
-        }
 
-        // 인접해 있을 경우. 맞은편은 나올 수가 없지.
-        if(dir == 1){
-            if(left == 2 || left == 4){
-                foot.updateLeft(dir);
-                foot.sumScore(3);
-            }
-            else{
-                foot.updateRight(dir);
-                foot.sumScore(3);
-            }
-        }
-        else if(dir == 2){
-            if(left == 1 || left == 3){
-                foot.updateLeft(dir);
-                foot.sumScore(3);
-            }
-            else{
-                foot.updateRight(dir);
-                foot.sumScore(3);
-            }
 
-        }
-        else if(dir == 3){
-            if(left == 2 || left == 4){
-                foot.updateLeft(dir);
-                foot.sumScore(3);
-            }
-            else{
-                foot.updateRight(dir);
-                foot.sumScore(3);
-            }
-        }
-        else {
-            if(left == 1 || left == 3){
-                foot.updateLeft(dir);
-                foot.sumScore(3);
-            }
-            else{
-                foot.updateRight(dir);
-                foot.sumScore(3);
-            }
-        }
+
 
 
     }
-
 
 
 }
-
-
-

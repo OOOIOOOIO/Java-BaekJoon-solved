@@ -10,4 +10,12 @@ public class pa {
 
         System.out.println("bbbbbbb메서드");
     }
+
+    public static void main(String[] args) {
+        int a = 15663;
+
+        System.out.println((int)Math.pow((int)Math.sqrt(a), 2));
+
+
+    }
 }
