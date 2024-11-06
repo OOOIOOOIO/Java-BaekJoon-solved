@@ -22,6 +22,7 @@ public class LIS_가장긴증가하는부분수열_11053 {
 		
 		for(int i = 0; i < N; i++) {
 			dp[i] = 1;
+
 			for(int j = 0; j < i; j++) {
 				if(arr[i]> arr[j]) {
 					dp[i] = Math.max(dp[i], dp[j] + 1);
