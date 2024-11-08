@@ -16,7 +16,7 @@ import java.util.StringTokenizer;
  * 일반적으로 dfs보다 bfs가 더 빠르고 효율적이라고 한다. 하지만 이는 특정 노드 혹은 최단 거리를 찾을 때이다.
  * 만약 모든 노드를 탐색한다면  dfs가 훨씬 빠르다.(이번처럼 모든 노드를 특정 값으로 초기화 시킨다던가)
  */
-public class 치즈_2368 {
+public class 치즈_2638 {
 
 	
 	static class Cordi{
